@@ -36,6 +36,7 @@ bash scripts/run_evals.sh . evals/results/run.md
 | `run-before.md` | 하네스 없음 (CLAUDE.md·스킬·훅 없이) | 2 / 8 |
 | `run-after-1.md` | 하네스 1차 | 8 / 8 |
 | `run-after-2.md` | 하네스 2차 | 8 / 8 |
+| `run-after-3.md` | 훅·평가 스크립트 보완 후 | 8 / 8 |
 
 ## 알려진 한계
 - 채점은 문자열 포함 여부만 봅니다. 예: O-03의 `60` 은 다른 숫자(예: 2026, 160)에도 걸릴 수 있어 느슨합니다.
