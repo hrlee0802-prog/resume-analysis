@@ -9,6 +9,12 @@ TMP="$(mktemp -d)"
 OPTS=(--model sonnet --effort medium --permission-mode acceptEdits --allowedTools Read Write Edit Glob Grep Bash Task)
 
 shasum data/* > "$TMP/before.sha" 2>/dev/null || sha256sum data/* > "$TMP/before.sha"
+# 이전 실행의 결과 파일이 남아 있으면 이번 실행이 실패해도 PASS 로 채점되므로 치워 둡니다.
+mkdir -p out "$TMP/prev-out"
+for f in out/offer-review*.md out/offer-revision*.md out/O07-session-log.txt; do
+  [ -e "$f" ] && mv "$f" "$TMP/prev-out/"
+done
+[ -n "$(ls -A "$TMP/prev-out")" ] && echo "이전 결과를 $TMP/prev-out 로 옮겼습니다."
 OUT_BEFORE=$(ls out | wc -l)
 
 for n in 1 2 3 4 5 6; do

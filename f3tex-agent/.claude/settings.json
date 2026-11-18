@@ -2,10 +2,14 @@
   "permissions": {
     "deny": [
       "Edit(data/**)",
+      "Write(data/**)",
       "Bash(rm:*)",
       "Bash(curl:*)",
+      "Bash(wget:*)",
       "Bash(mail:*)",
-      "Bash(sendmail:*)"
+      "Bash(sendmail:*)",
+      "Bash(scp:*)",
+      "Bash(nc:*)"
     ]
   },
   "hooks": {
@@ -13,7 +17,10 @@
       {
         "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
         "hooks": [
-          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard.py\"" }
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard.py\""
+          }
         ]
       }
     ]

@@ -2,6 +2,8 @@
 
 준비 (발표 전 1분)
 - Claude 데스크톱 앱 → Code 탭 → 이 폴더(`f3tex-agent`)를 환경으로 선택, 새 세션, 모델 Sonnet · effort 중간
+- 터미널에서 `python3 scripts/test_guard.py` → `31 / 31 통과` 확인 (훅이 살아 있는지)
+- `out/` 에 지난 리허설 결과가 남아 있으면 치우기 (`.gitkeep` 만 남김)
 - 알림 끄기, 메신저·다른 창 닫기, 실명·고객 정보가 화면에 없는지 확인
 - 실패 대비 화면 미리 열어 두기: `evals/results/after-run1-outputs/offer-review-O01.md`, `evals/results/run-before.md`, `evals/results/run-after-2.md`
 
